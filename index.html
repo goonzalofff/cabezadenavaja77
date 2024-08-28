@@ -45,6 +45,7 @@
                 <div class="linea"></div>
             </div>
         </section> -->
+    <div id="contador"></div>
     <nav class="menu">
         <div class="foto">
             <p><img src="./logo.png" alt="" class="foto"></p>
@@ -243,6 +244,25 @@ Con una técnica impecable y una energía inigualable, Jano es la fuerza impulso
         <p class="autor">Gonzalofff - 2024</p>
         <span><i class="boton-arriba fa fa-chevron-up" id="boton-arriba" aria-hidden="true"></i></span>
     </footer>
+    <script>
+        // Función para incrementar el contador de visitas
+        function incrementarContador() {
+            if (localStorage.getItem('visitas')) {
+                // Si ya hay un contador, incrementarlo
+                var contador = parseInt(localStorage.getItem('visitas'));
+                localStorage.setItem('visitas', contador + 1);
+            } else {
+                // Si no hay un contador, establecerlo en 1
+                localStorage.setItem('visitas', 1);
+            }
+        }
+
+        // Llamamos a la función para incrementar el contador al cargar la página
+        incrementarContador();
+
+        // Mostramos el contador en el elemento con el id "contador"
+        document.getElementById('contador').innerHTML = 'Número de visitas: ' + localStorage.getItem('visitas');
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
